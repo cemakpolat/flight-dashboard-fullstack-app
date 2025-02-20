@@ -9,8 +9,9 @@ services:
       - "8084:80"
     restart: always
     environment:
-      # - REACT_APP_MQTT_BROKER=ws://broker.emqx.io:8083/mqtt
-      - REACT_APP_MQTT_BROKER=ws:/broker.hivemq.com:8000
+      - REACT_APP_MQTT_BROKER=ws:/broker.hivemq.com:8000 # ws://broker.emqx.io:8083/mqtt
+    # depends_on:
+    #   - emqx  # Make sure the web app starts after EMQX
   flight-data-producer:
     build:
       context: ./flight-data-producer
@@ -24,11 +25,24 @@ services:
       - MQTT_TOPIC=flights/topic        # Replace with your desired MQTT topic
       - MESSAGE_SENDING_INTERVAL=10     # Adjust the sending interval as needed
       #- CITIES=NewYork,London,Paris,...# This is optional
-    depends_on:
-      []                                # If it depends on a service, like MQTT, add it here
+    # depends_on:
+    #   - emqx  # Make sure the web app starts after EMQX                  # If it depends on a service, like MQTT, add it here
     restart: always
 
-#  mqtt-broker:                         # Optional:  Include if you want a local MQTT broker for testing
-#    image: eclipse-mosquitto:latest
-#    ports:
-#      - "1883:1883"
+#   emqx:
+#       image: emqx/emqx:latest  # Use the official EMQX image
+#       ports:
+#         - "1883:1883"   # MQTT port
+#         - "8083:8083"   # MQTT over WebSocket port
+#         - "8084:8084"   # EMQX Dashboard (web interface) - remove if you don't want it
+#         - "8883:8883"   # MQTT over SSL/TLS port (optional)
+#         - "8081:8081"   # HTTP API (optional)
+#       restart: always
+      
+#       volumes:
+#         - emqx_data:/opt/emqx/data  # Persist EMQX data (optional)
+#         - emqx_log:/opt/emqx/log    # Persist EMQX logs (optional)
+
+# volumes:
+#     emqx_data:  # Named volume for EMQX data persistence
+#     emqx_log:   # Named volume for EMQX log persistence
