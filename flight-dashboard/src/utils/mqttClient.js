@@ -5,8 +5,8 @@ const clientId = "flightradar_" + Math.random().toString(16).substring(2, 8);
 const host = window._env_?.REACT_APP_MQTT_BROKER || 'ws://backup-broker.example.com:8083/mqtt';
 console.log("Using MQTT Broker:", host);
 
-
-const topic = 'flights/topic';
+// TODO: Make this configurable.
+const topic = 'flights/data';
 const options = {
   keepalive: 60,
   clientId: clientId,

@@ -14,7 +14,7 @@ logging.basicConfig(
 # MQTT Broker details - Read from environment variables
 MQTT_BROKER = os.environ.get("MQTT_BROKER", "broker.emqx.io")
 MQTT_PORT = int(os.environ.get("MQTT_PORT", 1883))  # Default to 1883 if not found
-MQTT_TOPIC = os.environ.get("MQTT_TOPIC", "flights/topic")
+MQTT_TOPIC = os.environ.get("MQTT_TOPIC", "flights/data")
 MESSAGE_SENDING_INTERVAL = int(os.environ.get("MESSAGE_SENDING_INTERVAL", 10)) # Default to 10 if not found
 
 

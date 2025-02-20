@@ -22,7 +22,7 @@ services:
       - PYTHONUNBUFFERED=1              # Ensure logs are printed immediately
       - MQTT_BROKER=broker.emqx.io      # Replace with your MQTT broker address
       - MQTT_PORT=1883                  # Replace with your MQTT broker port
-      - MQTT_TOPIC=flights/topic        # Replace with your desired MQTT topic
+      - MQTT_TOPIC=flights/data        # Replace with your desired MQTT topic
       - MESSAGE_SENDING_INTERVAL=10     # Adjust the sending interval as needed
       #- CITIES=NewYork,London,Paris,...# This is optional
     # depends_on:
