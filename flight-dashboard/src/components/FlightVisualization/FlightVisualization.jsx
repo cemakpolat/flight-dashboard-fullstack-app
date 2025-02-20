@@ -5,14 +5,9 @@ import './FlightVisualization.css';
 
 const FlightVisualization = () => {
   const { flights, completeFlight } = useContext(FlightContext);
-
-  // Filter out canceled flights
-
-  
+  // Filter out canceled flights  
   const activeFlights = flights.filter((flight) => (flight.status !== 'CANCELLED' && flight.status !== 'BOARDING'));
-
-  console.log('Active flights:', activeFlights); // Debugging: Log active flights
-
+  
   return (
     <div className="visualization">
       {activeFlights.map((flight) => {

@@ -6,7 +6,7 @@ services:
       args:
         REACT_APP_MQTT_BROKER: ${REACT_APP_MQTT_BROKER}
     ports:
-      - "8083:80"
+      - "8084:80"
     restart: always
     environment:
       # - REACT_APP_MQTT_BROKER=ws://broker.emqx.io:8083/mqtt

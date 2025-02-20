@@ -24,7 +24,7 @@ mqttClient.on('connect', () => {
   console.log("Attempting to subscribe..."); // Add this log  
 });
 
-// TODO: This approach should not be working, but it is.
+// TODO: In connect method, subscribe to topic fails.
 mqttClient.subscribe(topic, { qos: 0 }, (err) => {
     if (err) {
     console.error("Subscribe error:", err);
@@ -42,9 +42,10 @@ mqttClient.on('reconnect', () => {
   console.log('Reconnecting...');
 });
 
-mqttClient.on('message', (topic, message) => {
-  console.log(`Received message on topic ${topic}: ${message.toString()}`);
-});
+// For debugging, uncomment this.
+// mqttClient.on('message', (topic, message) => {
+//   console.log(`Received message on topic ${topic}: ${message.toString()}`);
+// });
 
 mqttClient.on('close', () => {
   console.log('Connection closed');
