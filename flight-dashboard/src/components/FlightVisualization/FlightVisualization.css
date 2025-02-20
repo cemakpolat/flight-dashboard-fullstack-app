@@ -1,0 +1,33 @@
+.visualization {
+  position: relative;
+  
+  background-image: url('../../assets/world-map.svg');
+  overflow: hidden;
+  height: 66vh;
+  width: 100%;
+}
+
+.airplane {
+  position: absolute;
+  font-size: 36px;
+  color: #fff;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveLeftToRight {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes moveRightToLeft {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
