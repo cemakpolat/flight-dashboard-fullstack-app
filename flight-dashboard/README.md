@@ -38,6 +38,3 @@ In this setup, we pass `REACT_APP_MQTT_BROKER` **at build time** so that it beco
    ```javascript
    const host = window._env_?.REACT_APP_MQTT_BROKER || 'ws://backup-broker.example.com:8083/mqtt';
    ```
-  
-
-Would you like any refinements to this explanation? 🚀

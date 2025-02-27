@@ -1,4 +1,3 @@
-
 # Flight Data Producer
 
 This project simulates a flight data producer that publishes data to an MQTT broker. It generates random flight information (flight ID, altitude, fuel level, status, etc.) and sends it to a specified MQTT topic at a configurable interval.
@@ -138,7 +137,4 @@ The following environment variables can be used to configure the application:
 
 ## License
 
- MIT License
-
-
-
+MIT License
