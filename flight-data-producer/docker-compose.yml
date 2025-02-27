@@ -1,0 +1,22 @@
+services:
+  flight-data-producer:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Assuming you have a Dockerfile in the root directory
+    volumes:
+      - .:/app  # Mount the project directory for development (optional)
+    environment:
+      - PYTHONUNBUFFERED=1  # Ensure logs are printed immediately
+      - MQTT_BROKER=broker.emqx.io # Replace with your MQTT broker address
+      - MQTT_PORT=1883 # Replace with your MQTT broker port
+      - MQTT_TOPIC=flights/topic # Replace with your desired MQTT topic
+      - MESSAGE_SENDING_INTERVAL=10 # Adjust the sending interval as needed
+      #- CITIES=NewYork,London,Paris,... This is optional
+    depends_on:
+      [] # If it depends on a service, like MQTT, add it here
+    restart: always
+
+#  mqtt-broker:  # Optional:  Include if you want a local MQTT broker for testing
+#    image: eclipse-mosquitto:latest
+#    ports:
+#      - "1883:1883"

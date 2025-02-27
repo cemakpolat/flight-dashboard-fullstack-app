@@ -1,0 +1,44 @@
+
+.flight-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: white;
+}
+
+.flight-table th,
+.flight-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+  color: white;
+}
+
+.flight-table th {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Highlight delayed status with a yellow background */
+.flight-table .delayed {
+  background-color: #efc439;
+  color: #000; 
+}
+
+/* Highlight canceled status with a red background */
+.flight-table .cancelled {
+  background-color: #e54e5b; 
+  color: #000; 
+}
+
+
+.flight-table .diverted {
+    background-color: #589de6; 
+    color: #000; 
+}
+
+.flight-table .boarding{
+    background-color: #60e780; 
+    color: #000; 
+
+}
