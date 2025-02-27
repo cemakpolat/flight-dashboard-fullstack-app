@@ -38,10 +38,3 @@ In this setup, we pass `REACT_APP_MQTT_BROKER` **at build time** so that it beco
    ```javascript
    const host = window._env_?.REACT_APP_MQTT_BROKER || 'ws://backup-broker.example.com:8083/mqtt';
    ```
-  
-### **Why This Approach?**  
-✔ **Stable & Predictable** – No surprises at runtime.  
-✔ **No Extra Processing in Nginx** – Simpler setup.  
-✔ **Ideal for Environments Where Variables Don’t Change Frequently**  
-
-Would you like any refinements to this explanation? 🚀
